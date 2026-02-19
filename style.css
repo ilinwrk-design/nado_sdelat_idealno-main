@@ -11,10 +11,20 @@ html{
 .page{
     position: relative;
     display: flex;
-    height: 100%;
+    height: inherit;
     margin: 0;
     font-family: Raleway, sans-serif;
     background-color: #fec7ee;
+    justify-content: center;
+}
+
+.page::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: rgb(255 255 255 / 0.3);
+    
 }
 
 .page__video{
@@ -34,4 +44,37 @@ html{
     letter-spacing: 3.5px;
     text-align: center;
     text-transform: uppercase;
+}
+
+.page__title::after{
+content: '*';
+position: relative;
+}
+
+.page__title:hover{
+    color: #4c4c4c;
+    cursor: default;
+}
+
+.page__title:hover::before{
+    content: "На самом деле нет.\AВажнее &mash; научиться ошибаться.";
+    position: absolute;
+    top:180px;
+    right: 20px;
+    max-width: 760px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 36px 44px;
+    box-shadow: 0 12px 0 #000;
+    color: #000;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 1px;
+    letter-spacing: normal;
+    text-align: left;
+    text-transform: initial;
+    background-color: #fff;
+    white-space: pre;
+
+
 }
